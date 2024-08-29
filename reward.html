@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walk Green - Prototype</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #26007d;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .gift-icon {
+            font-size: 80px;
+            color: #8db917;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gift-icon:hover {
+            transform: scale(1.1);
+        }
+        .message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .timeline {
+            display: none;
+            margin-top: 30px;
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 4px solid #8db917;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: fly 3s ease-out infinite;
+        }
+        @keyframes fly {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-200px) scale(0.5);
+            }
+        }
+        .city-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            position: relative;
+        }
+        .city-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background-color: #8db917;
+            z-index: -1;
+        }
+        .city {
+            position: relative;
+            text-align: center;
+        }
+        .city::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: #8db917;
+            border-radius: 50%;
+        }
+        .city.ljubljana::before {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border: 4px solid orange;
+        }
+        .city-name {
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="my-5">Welcome to Ljubljana</h1>
+        <div id="gift" class="gift-icon">🎁</div>
+        <div id="message" class="message">Congratulations! You've earned a reward!<br>Step 1: You started your journey.<br>Step 2: You reached 5,000 steps!<br>Step 3: You planted a tree!</div>
+        <div id="timeline" class="timeline">
+            <div class="city-timeline">
+                <div class="city">
+                    <div class="city-name">Beograd</div>
+                </div>
+                <div class="city ljubljana">
+                    <div class="city-name">Ljubljana</div>
+                </div>
+                <div class="city">
+                    <div class="city-name">Sarajevo</div>
+                </div>
+                <div class="city">
+                    <div class="city-name">Banja Luka</div>
+                </div>
+                <div class="city">
+                    <div class="city-name">Pristina</div>
+                </div>
+                <div class="city">
+                    <div class="city-name">Podgorica</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.getElementById('gift').click();
+        };
+
+        document.getElementById('gift').addEventListener('click', function() {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('timeline').style.display = 'block';
+            createStars();
+        });
+
+        function createStars() {
+            setInterval(() => {
+                let star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = (Math.random() * window.innerWidth) + 'px';
+                star.style.top = (Math.random() * window.innerHeight) + 'px';
+                document.body.appendChild(star);
+                setTimeout(() => {
+                    star.remove();
+                }, 3000);
+            }, 300);
+        }
+    </script>
+</body>
+</html>
