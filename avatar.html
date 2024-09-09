@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Your Avatar</title>
+    <title>Napravite Svoj Avatar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -30,34 +30,34 @@
 </head>
 <body>
     <div class="container text-center">
-        <h1 class="my-5">Create Your Avatar</h1>
+        <h1 class="my-5">Napravite svoj Avatar</h1>
         <div class="avatar-preview" id="avatarPreview">😀</div>
         <form id="avatarForm">
             <div class="form-group">
-                <label for="gender">Gender:</label>
+                <label for="gender">Pol:</label>
                 <select class="form-control" id="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    <option value="male">Muški</option>
+                    <option value="female">Ženski</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="hairstyle">Hairstyle:</label>
+                <label for="hairstyle">Frizura:</label>
                 <select class="form-control" id="hairstyle">
-                    <option value="short">Short</option>
-                    <option value="long">Long</option>
-                    <option value="curly">Curly</option>
-                    <option value="bald">Bald</option>
+                    <option value="short">Kratka</option>
+                    <option value="bald">Bez kose</option>
+                    <option value="curly">Kovrdžava</option>
+                    <option value="gray">Seda</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="skinColor">Skin Color:</label>
+                <label for="skinColor">Boja kože:</label>
                 <select class="form-control" id="skinColor">
-                    <option value="light">Light</option>
-                    <option value="medium">Medium</option>
-                    <option value="dark">Dark</option>
+                    <option value="light">Svetla</option>
+                    <option value="medium">Srednja</option>
+                    <option value="dark">Tamna</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-success" onclick="updateAvatar()">Create Avatar</button>
+            <button type="button" class="btn btn-success" onclick="updateAvatar()">Napravite Avatar</button>
         </form>
     </div>
 
@@ -67,39 +67,39 @@
             const hairstyle = document.getElementById('hairstyle').value;
             const skinColor = document.getElementById('skinColor').value;
 
-            let avatar = '😀'; // Default avatar
+            let avatar = '😀'; // Podrazumevani avatar
 
             if (gender === 'male') {
                 if (skinColor === 'light') {
                     if (hairstyle === 'short') avatar = '👨🏻';
-                    else if (hairstyle === 'long') avatar = '👨🏻‍🦳';
+                    else if (hairstyle === 'gray') avatar = '👨🏻‍🦳';
                     else if (hairstyle === 'curly') avatar = '👨🏻‍🦱';
                     else if (hairstyle === 'bald') avatar = '👨🏻‍🦲';
                 } else if (skinColor === 'medium') {
                     if (hairstyle === 'short') avatar = '👨🏽';
-                    else if (hairstyle === 'long') avatar = '👨🏽‍🦳';
+                    else if (hairstyle === 'gray') avatar = '👨🏽‍🦳';
                     else if (hairstyle === 'curly') avatar = '👨🏽‍🦱';
                     else if (hairstyle === 'bald') avatar = '👨🏽‍🦲';
-                } else if (hairstyle === 'dark') {
+                } else if (skinColor === 'dark') {
                     if (hairstyle === 'short') avatar = '👨🏿';
-                    else if (hairstyle === 'long') avatar = '👨🏿‍🦳';
+                    else if (hairstyle === 'gray') avatar = '👨🏿‍🦳';
                     else if (hairstyle === 'curly') avatar = '👨🏿‍🦱';
                     else if (hairstyle === 'bald') avatar = '👨🏿‍🦲';
                 }
             } else if (gender === 'female') {
                 if (skinColor === 'light') {
                     if (hairstyle === 'short') avatar = '👩🏻';
-                    else if (hairstyle === 'long') avatar = '👩🏻‍🦳';
+                    else if (hairstyle === 'gray') avatar = '👩🏻‍🦳';
                     else if (hairstyle === 'curly') avatar = '👩🏻‍🦱';
                     else if (hairstyle === 'bald') avatar = '👩🏻‍🦲';
                 } else if (skinColor === 'medium') {
                     if (hairstyle === 'short') avatar = '👩🏽';
-                    else if (hairstyle === 'long') avatar = '👩🏽‍🦳';
+                    else if (hairstyle === 'gray') avatar = '👩🏽‍🦳';
                     else if (hairstyle === 'curly') avatar = '👩🏽‍🦱';
                     else if (hairstyle === 'bald') avatar = '👩🏽‍🦲';
-                } else if (hairstyle === 'dark') {
+                } else if (skinColor === 'dark') {
                     if (hairstyle === 'short') avatar = '👩🏿';
-                    else if (hairstyle === 'long') avatar = '👩🏿‍🦳';
+                    else if (hairstyle === 'gray') avatar = '👩🏿‍🦳';
                     else if (hairstyle === 'curly') avatar = '👩🏿‍🦱';
                     else if (hairstyle === 'bald') avatar = '👩🏿‍🦲';
                 }

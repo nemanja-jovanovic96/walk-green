@@ -10,6 +10,10 @@
         body {
             background-color: #f0f2f5;
             padding-top: 60px; /* Dodaj padding za fiksni navigacioni bar */
+            background-image: url('background.jpeg');
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: 100% 100%;           
         }
 
         .navbar {
@@ -22,7 +26,7 @@
         }
 
         .navbar .navbar-brand img {
-            height: 40px;
+            height: 20px;
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -87,6 +91,22 @@
             width: 20px;
             height: 20px;
         }
+
+        .menu-item.highlighted {
+    background-color: #4a00e0; /* Upadljiva pozadinska boja */
+    color: white; /* Kontrastna boja za tekst */
+    border: 2px solid #8db917; /* Boja ivice koja se razlikuje od pozadine */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Senka za efekat dubine */
+    transform: scale(1.05); /* Blago uvećanje za dodatni vizualni efekat */
+    transition: all 0.3s ease; /* Glatka tranzicija za efekte */
+}
+
+.menu-item.highlighted:hover {
+    background-color: #3b00c4; /* Tamnija nijansa pozadine prilikom hover efekta */
+    border-color: #8db917; /* Boja ivice tokom hover efekta */
+    transform: scale(1.1); /* Dodatno uvećanje pri hover efektu */
+}
+
     </style>
 </head>
 
@@ -115,6 +135,13 @@
                 <img src="https://img.icons8.com/ios-filled/50/000000/task.png" alt="Icon">
             </div>
         </div>
+        <div class="menu-item highlighted" onclick="window.location.href='walkgreen.html';">
+            <span>Walk Green</span>
+            <div class="icon-circle">
+                👟
+            </div>
+        </div>
+        
         <div class="menu-item" onclick="alert('Otvoreni su Računi')">
             <span>Računi</span>
             <div class="icon-circle">
@@ -161,12 +188,6 @@
             <span>Novo za vas</span>
             <div class="icon-circle">
                 <img src="https://img.icons8.com/ios-filled/50/000000/open-book.png" alt="Icon">
-            </div>
-        </div>
-        <div class="menu-item" onclick="window.location.href='walkgreen.html';">
-            <span>Walk Green</span>
-            <div class="icon-circle">
-                👟
             </div>
         </div>
         <div class="menu-item" onclick="alert('Otvoreno je Lokator')">
